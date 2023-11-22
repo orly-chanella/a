@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordéon avec x-collapse</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Accordéon avec collapse</h1>
+    <div x-data="{ open: 0 }" class="accordeon" >
+      <section >
+          <button @click="open = 1">bouton1</button>
+          <span x-show="open ===1" x-collapse >
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Proin nec ex urna.  
+            </p>
+        </span>
+         
+      </section>
+      <section>
+          <button @click="open = 2">Bouton2 </button>
+          <span x-show="open ===2" x-collapse>
+           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Proin nec ex urna.  
+          </p>
+        </span>
+      </section>
+      <section >
+          <button @click="open = 3">Bouton3 </button>
+          <span x-show="open ===3" x-collapse>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin 
+              nec ex urna.  
+            </p>
+        </span>
+      </section>
+    </div>
+
+  </body>
+</html>

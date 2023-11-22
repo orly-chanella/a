@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Accordéon</title>
+    <!-- Ajouter Alpine.js à la fin de <head> -->
+    <script defer src="https://unpkg.com/alpinejs@2.x.x/dist/alpine.min.js" integrity="sha384-ZiUHpDgJYAd++Oq2ooUk1RMYx3d0xFdPapFSxLX3E4h/tj/IE4U0lXfO+cgA6APZ" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Structure HTML pour l'accordéon -->
+<div x-data="{ openTab: 1 }">
+    <section x-show="openTab === 1">
+        <button @click="openTab = 1">Bouton 1</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+    <section x-show="openTab === 2">
+        <button @click="openTab = 2">Bouton 2</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+    <section x-show="openTab === 3">
+        <button @click="openTab = 3">Bouton 3</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+</div>
+
+</body>
+</html>
+
+<accordeon>
+    <section>
+      <button>bouton 1</button>
+      <div x-data="{ open: false }">
+        <button @click="open = ! open">Toggle</button>
+     
+        <span x-show="open" x-transition>
+            Hello 
+        </span>
+    </div>
+      <p x-show="estOuvert">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veniam quis at similique atque laboriosam sapiente eaque tempora aliquam provident maxime, consequatur deleniti, quasi molestiae, vero reiciendis ipsum sit? Magnam?</p>
+    </section>
+    <section>
+      <button>bouton 2</button>
+      <p>Amet voluptatem beatae molestiae autem quia, pariatur assumenda quae quam maiores quas eligendi mollitia? Quasi ex esse nisi eveniet consequatur sit, impedit inventore nemo ipsa atque non nihil ducimus obcaecati!</p>
+    </section>
+    <section>
+      <button>bouton 3</button>
+      <p>Ad veniam, sunt ullam amet repellat eum aliquam similique laboriosam nostrum inventore mollitia incidunt laudantium pariatur eveniet dolor cumque velit expedita sequi harum. Perspiciatis aliquam officiis sint et quia exercitationem!</p>
+    </section>
+  </accordeon>
+
+  <h1>Accordéon avec des booléens</h1>
+
+  <body>
+    <accordeon>
+  <section>
+        <button>bouton 1</button>
+    <div x-data="{ open: false }"
+    >
+       <button @click="open = ! open">
+        <p x-show="estOuvert">Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Quia veniam quis at similique atque laboriosam 
+          sapiente eaque tempora aliquam provident maxime, consequatur deleniti, 
+          quasi molestiae, vero reiciendis ipsum sit? Magnam?
+        </p>
+      
+      </button>
+       <span x-show="open" x-transition>
+        
+    </span>   
+  </div>
+
+      </section>
+
+      <section>
+        <button>bouton 2</button>
+  <p x-show="estOuvert">Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Quia veniam quis at similique atque laboriosam 
+    sapiente eaque tempora aliquam provident maxime, consequatur deleniti, 
+    quasi molestiae, vero reiciendis ipsum sit? Magnam?
+  </p>
+      </section>
+
+      <section>
+        <button>bouton 3</button> 
+  <p x-show="estOuvert">Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Quia veniam quis at similique atque laboriosam 
+    sapiente eaque tempora aliquam provident maxime, consequatur deleniti, 
+    quasi molestiae, vero reiciendis ipsum sit? Magnam?
+  </p>
+      </section>
+    </accordeon>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Accordéon</title>
+    <!-- Ajouter Alpine.js à la fin de <head> -->
+    <script defer src="https://unpkg.com/alpinejs@2.x.x/dist/alpine.min.js" integrity="sha384-ZiUHpDgJYAd++Oq2ooUk1RMYx3d0xFdPapFSxLX3E4h/tj/IE4U0lXfO+cgA6APZ" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Structure HTML générée à partir de la notation abrégée -->
+<div x-data="{ openTab: 1 }" class="accordeon">
+    <section x-data="{ section: 1 }" x-show="openTab === section">
+        <button @click="openTab = section">Bouton {{ section }}</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+    <section x-data="{ section: 2 }" x-show="openTab === section">
+        <button @click="openTab = section">Bouton {{ section }}</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+    <section x-data="{ section: 3 }" x-show="openTab === section">
+        <button @click="openTab = section">Bouton {{ section }}</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex urna. </p>
+    </section>
+</div>
+
+</body>
+</html>
+
+<div x-data="{ open: false }" class="accordeon" x-transition.duration.800ms></div>
+        <section>
+            <button @click="open = ! open">Bouton2 </button>
+            <span x-show="open" x-transition>
+             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Proin nec ex urna.  
+            </p>
+          </span>
+        </section>
+      </div>
+
+    <div x-data="{ open: false }" class="accordeon" x-transition.duration.800ms></div>
+        <section>
+            <button @click="open = ! open">Bouton3 </button>
+            <span x-show="open" x-transition>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin 
+                nec ex urna.  
+              </p>
+          </span>
+        </section>
+    </div>

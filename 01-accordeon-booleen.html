@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordéon 1 avec des booléens</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Accordéon 1 avec booléen</h1>
+    <div x-data="{ open: false }" class="accordeon">
+        <section >
+            <button @click="open = ! open">bouton1</button>
+            <span x-show="open" x-transition.duration.800ms>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Proin nec ex urna.  
+              </p>
+          </span>   
+        </section>
+        </div>
+    <div x-data="{ open: false }" class="accordeon">
+              <button @click="open = ! open">bouton2</button>
+              <span x-show="open" x-transition.duration.800ms>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Proin nec ex urna.  
+                </p>
+            </span>   
+          </section>
+          </div>
+      <div x-data="{ open: false }" class="accordeon">
+            <section >
+                <button @click="open = ! open">bouton3</button>
+                <span x-show="open" x-transition.duration.800ms>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Proin nec ex urna.  
+                  </p>
+              </span>   
+            </section>
+            </div>
+    </body>
+    </html>
